@@ -18,11 +18,13 @@ else:
     print("Você é maior de idade.")
 
 #Teste de cadastro
-print('Digite seu email: \n')
-email = input()
-print('Digite sua senha: \n')
-senha = input()
-if email == email and senha == senha:
+
+email = input('Digite seu email: ')
+senha = input('Digite sua senha: ')
+email_confirmado = input('Confirme seu email: ')
+senha_confirmada = input('Confirme sua senha: ')
+
+if email == email_confirmado and senha == senha_confirmada:
     print('Login realizado com sucesso!')
 else:
     print('Email ou senha incorretos!')

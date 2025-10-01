@@ -19,19 +19,27 @@ def exibir_opcoes():
     print('4 - Sair\n')
 
 
+def opcao_invalida():
+    print('Opção inválida')
+    input('Pressione ENTER para continuar...')
+    main()
+
+
 def obter_opcao_escolhida():
-    opcao_escolhida = int(input('Escolha uma opção: '))
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurantes')
-    elif opcao_escolhida == 3:
-        print('Ativar restaurante')
-    elif opcao_escolhida == 4:
-        print('Saindo...')
-    else:
-        print('Opção inválida')
-        obter_opcao_escolhida()
+    try:
+        opcao_escolhida = int(input('Escolha uma opção: '))
+        if opcao_escolhida == 1:
+            print('Cadastrar restaurante')
+        elif opcao_escolhida == 2:
+            print('Listar restaurantes')
+        elif opcao_escolhida == 3:
+            print('Ativar restaurante')
+        elif opcao_escolhida == 4:
+            print('Saindo...')
+        else:
+            opcao_invalida()
+    except:
+        opcao_invalida()
 
 def finalizar_app():
       os.system('cls')
@@ -40,6 +48,7 @@ def finalizar_app():
 
 
 def main():
+    os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
     obter_opcao_escolhida()
