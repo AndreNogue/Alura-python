@@ -2,8 +2,6 @@ import os
 
 restaurantes = []
 
-
-
 def exibir_nome_do_programa():
     print("""
     
@@ -35,8 +33,8 @@ def cadastrar_novo_restaurante():
     nome_restaurante = input('Nome: ')
     restaurantes.append(nome_restaurante) # Adiciona o restaurante à lista
     print(f'Restaurante {nome_restaurante} cadastrado com sucesso!')
-    input('Pressione ENTER para voltar ao menu principal...')
-    main()
+    input('Pressione ENTER para continuar...')
+    main()    
 
 
 def obter_opcao_escolhida():
@@ -47,6 +45,8 @@ def obter_opcao_escolhida():
             cadastrar_novo_restaurante()
         elif opcao_escolhida == 2:
             print('Listar restaurantes')
+            for restaurante in restaurantes:
+                print(f'- {restaurante}')
         elif opcao_escolhida == 3:
             print('Ativar restaurante')
         elif opcao_escolhida == 4:
